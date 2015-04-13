@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Nombre de la aplicación -->
+    <string name="app_name">Teleasistenci@Tic+</string>
+
+    <!-- Versión de la aplicación -->
+    <string name="version_code">2</string>
+    <string name="version_name">Ver. 0.2 Alpha (2) build</string>
+
+    <!-- LAYOUT: init_splash_screen_logo_teleasistencia -->
+    <string name="init_splash_screen_iniciando_aplicacion">Iniciando aplicación</string>
+
+    <!-- Cadenas por defecto -->
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Activity actMain -->
+        <string name="title_activity_act_main">Pantalla inicial - nombre usuario</string>
+
+        <!-- Menus -->
+        <string name="menu_actmain_debug_screen">Pantalla de depuración</string>
+        <string name="menu_actmain_exit_app">Salida</string>
+
+        <!-- Pantalla principal-->
+        <string name="main_btn_help">AVISO</string>
+        <string name="user_name">Usuario</string>
+
+        <!-- Mensajes de llamada de aviso -->
+        <string name="dialer_calling">Conectando con Teleasistencia.\n Espere por favor.</string>
+        <string name="dialer_conected">Conectado. Registrando su petición de aviso.</string>
+        <string name="dialer_delivered">Su petición de aviso ha sido registrada.</string>
+        <string name="dialer_error">Error. Inténtelo de nuevo.</string>
+        <string name="dialer_closed">Gracias. En breve será atendido/a.</string>
+        <string name="dialer_checked">Actualmente hay un Aviso pendiente de ser atendido.</string>
+
+        <string name="dialer_abort_petition">Cancelar el aviso.</string>
+        <string name="dialer_abort_confirm">¿Desea cancelar aviso?</string>
+        <string name="dialer_abort_aborted">Aviso cancelado.</string>
+        <string name="dialer_abort_error">Error. No se pudo cancelar el aviso.</string>
+        <string name="red_button_label_send">ENVIAR AVISO</string>
+        <string name="red_button_label_cancel">CANCELAR AVISO</string>
+
+    <!-- Fin cadenas actMain -->
+
+    <!-- Inicio Cademas Opciones de usuario -->
+
+        <string name="user_options_nombre">Nombre</string>
+        <string name="user_options_apellidos">Apellidos</string>
+
+    <!-- Fin cadenas opciones de usuario -->
+
+
+    <!-- Mensajes de error -->
+        <string name="ERROR">ERROR</string>
+        <string name="CORRECTO">CORRECTO</string>
+        <string name="error_empty_string">Error: cadena vacía</string>
+
+    <!-- Mensajes de alerta -->
+        <!-- Genéricos -->
+        <string name="close_window">Cerrar</string>
+
+        <!--Comprobación de conexión de datos(internet)-->
+        <string name="check_internet_conn_title">Conexión a Internet</string>
+        <string name="check_internet_conn_error">Error de Conexión a Internet</string>
+        <string name="check_internet_conn_ok">Conexión a Internet disponible</string>
+        <string name="check_internet_conn_retry">Reintentar</string>
+
+        <!--Comprobación de conexión al Servidor -->
+        <string name="check_server_conn_title">Conexión a Servidor</string>
+        <string name="check_server_conn_error">Error de Conexión al Servidor</string>
+        <string name="check_server_conn_ok">Conexión realizada</string>
+        <string name="check_server_conn_retry">Reintentar</string>
+
+        <!--Comprobación de usuario registrado -->
+        <string name="check_user_account_title">Login</string>
+        <string name="check_user_account_error">Error de Login</string>
+        <string name="check_user_account_ok">Bienvenid@</string>
+        <string name="check_user_account_retry">Reintentar</string>
+
+    <!-- Actividad main offline -->
+        <string name="title_activity_act_main_offline">Pantalla principal (offline)</string>
+    <!-- Fin cadenas actMain offline -->
+
+    <!-- Actividad main offline -->
+        <string name="menu_user_options_exit">Salida</string>
+    <!-- Fin cadenas actMain offline -->
+
+    <!-- Opciones de usuario -->
+        <string name="menu_act_user_options">Configuración</string>
+
+        <string name="user_options_datos_personales_edit">Datos Personales</string>
+        <string name="user_options_datos_personales_correct_edit">Modificación correcta</string>
+
+        <string name="user_options_persona_contacto_label">Persona de contacto (pulse para cambiar)</string>
+
+    <!-- Actividad main debug -->
+        <string name="title_activity_act_main_debug">Pantalla de depuracion</string>
+        <string name="sms_button_text">Aviso a familiar</string>
+
+        <string name="title_activity_act_debug_memory">Debug > Memoria</string>
+        <string name="title_activity_act_debug_data_connection">Debug > DataConnection</string>
+        <string name="title_activity_act_debug_check_server">Debug > CheckServer</string>
+        <string name="title_activity_act_debug_cifrado">Debug > Cifrado/Descifrado</string>
+
+        <string name="title_activity_act_debug_show_log">Debug > ShowLog</string>
+        <string name="title_activity_act_debug_sms">Debug > SMS</string>
+        <string name="title_activity_act_debug_ducha">Debug > Modo Ducha</string>
+        <string name="title_activity_act_user_options">Configuración usuario/a</string>
+        <string name="title_activity_act_user_options_datos_personales">Configuración > Datos personales</string>
+        <string name="title_activity_act_user_options_persona_contacto">Configuración > Persona/s de Contacto</string>
+        <string name="title_activity_act_debug_user_config">Configuración > sharedPreferences</string>
+
+    <!-- Fin cadenas actMain Debug -->
+
+        <!--Comprobación de registro de usuario -->
+            <string name="user_register_porfavor_label">Por favor, introduzca sus datos personales</string>
+        <!-- Fin cadenas registro de usuario -->
+
+        <!-- Relacionados con personas de contacto -->
+            <string name="user_register_no_phone_contacs">Se necesitan personas de contacto para poder envíar el aviso.</string>
+            <string name="user_register_no_phone_contacs_title">No hay personas de contacto</string>
+        <!-- Fin cadenas personas de contacto -->
+
+        <!-- Relacionadas SMS -->
+            <string name="user_sms_sent">Enviado</string>
+        <!-- fin Relacionadas SMS -->
+
+</resources>

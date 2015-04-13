@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.local.android.teleasistenciaticplus"
+    android:versionCode="@string/version_code"
+    android:versionName="@string/version_name" >
+    <!--
+        Android 5.0 - 21
+        Android 4.1, 4.1.1	16	JELLY_BEAN
+    -->
+    <uses-sdk
+        android:maxSdkVersion="21"
+        android:minSdkVersion="16" />
+
+    <!-- Permisos -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Almacenamiento -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+    <!-- GPS -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- LISTA DE CONTACTOS -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- SMS -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <!-- Aplicacion -->
+    <application
+        android:name=".modelo.Hook"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Actividad de carga, MAIN -->
+        <activity
+            android:name=".act.actLoadingScreen"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:relinquishTaskIdentity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Actividad principal Modo Online -->
+        <activity
+            android:name=".act.online.actMain"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_act_main"
+            android:logo="@drawable/ic_launcher"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+
+        <!-- Actividad principal Modo Offline -->
+        <activity
+            android:name=".act.offline.actMainOffline"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_act_main_offline"
+            android:logo="@drawable/ic_launcher"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+
+        <!-- Actividad principal Debug -->
+        <activity
+            android:name=".act.debug.actMainDebug"
+            android:label="@string/title_activity_act_main_debug"
+            android:parentActivityName=".act.online.actMain" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugMemory"
+            android:label="@string/title_activity_act_debug_memory"
+            android:parentActivityName=".act.debug.actMainDebug" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugDataConnection"
+            android:label="@string/title_activity_act_debug_data_connection"
+            android:parentActivityName=".act.debug.actMainDebug" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugCheckServer"
+            android:label="@string/title_activity_act_debug_check_server"
+            android:parentActivityName=".act.debug.actMainDebug" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugCifrado"
+            android:label="@string/title_activity_act_debug_cifrado"
+            android:parentActivityName=".act.debug.actMainDebug" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugShowLog"
+            android:label="@string/title_activity_act_debug_show_log"
+            android:parentActivityName=".act.debug.actMainDebug" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugSMS"
+            android:label="@string/title_activity_act_debug_sms" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugChronometer"
+            android:label="@string/title_activity_act_debug_ducha"
+            android:parentActivityName=".act.debug.actMainDebug" >
+        </activity>
+
+        <!-- Fin actividades Depuración -->
+
+
+        <!-- Actividad de opciones de usuario -->
+        <activity
+            android:name=".act.user.actUserOptions"
+            android:label="@string/title_activity_act_user_options" >
+        </activity>
+        <activity
+            android:name=".act.user.actUserOptionsDatosPersonales"
+            android:label="@string/title_activity_act_user_options_datos_personales" >
+        </activity>
+        <activity
+            android:name=".act.user.actUserOptionsPersonaContacto"
+            android:label="@string/title_activity_act_user_options_persona_contacto" >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugUserConfig"
+            android:label="@string/title_activity_act_debug_user_config" >
+        </activity>
+    </application>
+
+</manifest>
