@@ -1,7 +1,6 @@
 package com.local.android.teleasistenciaticplus.lib.cifrado;
 
 import com.local.android.teleasistenciaticplus.lib.helper.AppLog;
-import com.local.android.teleasistenciaticplus.modelo.SecretKey;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -16,7 +15,7 @@ import javax.crypto.spec.SecretKeySpec;
  *
  */
 
-public class Cifrado implements SecretKey {
+public class Cifrado {
 
     static char[] HEX_CHARS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
@@ -30,7 +29,7 @@ public class Cifrado implements SecretKey {
     private Cipher cipher;
 
     /////////////////////////////////////////////////
-    private String SecretKey = SECRET_KEY;
+    private String SecretKey = "ef85jx92mc94ja9c";
     /////////////////////////////////////////////////
 
     /**

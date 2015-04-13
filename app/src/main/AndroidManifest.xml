@@ -66,7 +66,7 @@
 
         <!-- Actividad principal Modo Offline -->
         <activity
-            android:name=".act.offline.actMainOffline"
+            android:name=".act.main.actMain"
             android:icon="@drawable/ic_launcher"
             android:label="@string/title_activity_act_main_offline"
             android:logo="@drawable/ic_launcher"

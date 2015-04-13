@@ -1,4 +1,4 @@
-package com.local.android.teleasistenciaticplus.act.offline;
+package com.local.android.teleasistenciaticplus.act.main;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -35,7 +35,7 @@ import java.util.Date;
  * @param
  */
 
-public class actMainOffline extends Activity implements fragUserRegister.OnFragmentInteractionListener {
+public class actMain extends Activity implements fragUserRegister.OnFragmentInteractionListener {
 
 
     ImageButton SMSAlertButton;
