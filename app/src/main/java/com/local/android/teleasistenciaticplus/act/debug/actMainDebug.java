@@ -37,10 +37,9 @@ public class actMainDebug extends Activity {
                     "Envío SMS", //id 1
                     "Lectura .LOG", //id 2
                     "Cifrado/Descifrado", //id 3
-                    "Comprobacion conexión a servidor", // id 4
-                    "Acceso de datos e internet", //id 5
-                    "Uso de la memoria", //id 6
-                    "Modo ducha", //id 7
+                    "Acceso de datos e internet", //id 4
+                    "Uso de la memoria", //id 5
+                    "Modo ducha", //id 6
             };
 
             /// Creación del adaptador con su String
@@ -62,29 +61,26 @@ public class actMainDebug extends Activity {
                     Class actToLoad = null;
 
                     switch(position) {
-                        case 7: //"Modo ducha"
-                            actToLoad = actDebugChronometer.class;
-                            break;
-                        case 6: //"Uso de la memoria"
-                            actToLoad = actDebugMemory.class;
-                            break;
-                        case 5: //"Acceso de datos e internet"
-                            actToLoad = actDebugDataConnection.class;
-                            break;
-                        case 4: //"Comprobacion conexión a servidor"
-                            actToLoad = actDebugCheckServer.class;
-                            break;
-                        case 3: //"Cifrado Descifrado"
-                            actToLoad = actDebugCifrado.class;
-                            break;
-                        case 2: //"Lectura de log de depuración"
-                            actToLoad = actDebugShowLog.class;
+                        case 0: //"Configuración de usuario"
+                            actToLoad = actDebugUserConfig.class;
                             break;
                         case 1: //"Envio SMS"
                             actToLoad = actDebugSMS.class;
                             break;
-                        case 0: //"Configuración de usuario"
-                            actToLoad = actDebugUserConfig.class;
+                        case 2: //"Lectura de log de depuración"
+                            actToLoad = actDebugShowLog.class;
+                            break;
+                        case 3: //"Cifrado Descifrado"
+                            actToLoad = actDebugCifrado.class;
+                            break;
+                        case 4: //"Acceso de datos e internet"
+                            actToLoad = actDebugDataConnection.class;
+                            break;
+                        case 5: //"Uso de la memoria"
+                            actToLoad = actDebugMemory.class;
+                            break;
+                        case 6: //"Modo ducha"
+                            actToLoad = actDebugChronometer.class;
                             break;
                     }
 
@@ -140,7 +136,7 @@ public class actMainDebug extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.menu_act_main_debug_exit) {
+        if (id == R.id.menu_act_main_exit_app) {
             finish();
         }
 

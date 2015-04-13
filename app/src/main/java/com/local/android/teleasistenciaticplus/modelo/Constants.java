@@ -34,25 +34,6 @@ public interface Constants {
 
 
     ////////////////////////////////////////////////
-    // SERVIDOR TELEASISTENCIA
-    ////////////////////////////////////////////////
-
-        public static final String SERVER_PROTOCOL = "http://";
-        public static final String SERVER_IP = "10.0.0.190";
-        //public static final String SERVER_ADDRESS = SERVER_PROTOCOL + "ttpserver.dev";
-        public static final String SERVER_URL = SERVER_PROTOCOL + SERVER_IP;
-
-        ////////////////////////////////////////////////
-        // Controladores
-        ////////////////////////////////////////////////
-        public static final String CONTROLLER_CHECK_ONLINE_SERVER = "/serverstatus";
-        public static final String CONTROLLER_CHECK_PHONE = "/phone/check/";
-        public static final String CONTROLLER_USER_NAME = "/phoneuser/name/";
-        public static final String CONTROLLER_AVISO_CHECK = "/aviso/check/";
-        public static final String CONTROLLER_AVISO_CREATE = "/aviso/create/";
-        public static final String CONTROLLER_AVISO_DELETE = "/aviso/delete/";
-
-    ////////////////////////////////////////////////
     // OPERACIONES HTTP
     ////////////////////////////////////////////////
 
@@ -65,3 +46,24 @@ public interface Constants {
         public static final String APP_SHARED_PREFERENCES_FILE = "teleasistencia.prefs";
 
 }
+
+/*
+    ////////////////////////////////////////////////
+    // SERVIDOR TELEASISTENCIA
+    ////////////////////////////////////////////////
+
+public static final String SERVER_PROTOCOL = "http://";
+public static final String SERVER_IP = "10.0.0.190";
+//public static final String SERVER_ADDRESS = SERVER_PROTOCOL + "ttpserver.dev";
+public static final String SERVER_URL = SERVER_PROTOCOL + SERVER_IP;
+
+////////////////////////////////////////////////
+// Controladores
+////////////////////////////////////////////////
+public static final String CONTROLLER_CHECK_ONLINE_SERVER = "/serverstatus";
+public static final String CONTROLLER_CHECK_PHONE = "/phone/check/";
+public static final String CONTROLLER_USER_NAME = "/phoneuser/name/";
+public static final String CONTROLLER_AVISO_CHECK = "/aviso/check/";
+public static final String CONTROLLER_AVISO_CREATE = "/aviso/create/";
+public static final String CONTROLLER_AVISO_DELETE = "/aviso/delete/";
+*/

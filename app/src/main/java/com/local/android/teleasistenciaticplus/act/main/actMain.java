@@ -37,16 +37,13 @@ import java.util.Date;
 
 public class actMain extends Activity implements fragUserRegister.OnFragmentInteractionListener {
 
-
     ImageButton SMSAlertButton;
     ImageButton SMSOKButton;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_main_offline);
+        setContentView(R.layout.layout_main);
 
         SMSAlertButton = (ImageButton) findViewById(R.id.tfmButton);
         SMSOKButton = (ImageButton) findViewById(R.id.btnIamOK);
@@ -78,9 +75,9 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
 
         // Si estamos en modo de depuración
         if ( Constants.DEBUG_LEVEL == DebugLevel.DEBUG ) {
-            getMenuInflater().inflate(R.menu.menu_act_mainoffline, menu);
+            getMenuInflater().inflate(R.menu.menu_act_main, menu);
         } else { //si estamos en modo de producción no mostramos el menu de depuración
-            getMenuInflater().inflate(R.menu.menu_act_mainoffline_produccion, menu);
+            getMenuInflater().inflate(R.menu.menu_act_main_produccion, menu);
         }
 
         return true;
@@ -95,9 +92,9 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.menu_actmainoffline_exit_app) {
+        if (id == R.id.menu_act_main_exit_app) {
             finish();
-        } else if ( id == R.id.menu_actmainoffline_debug_screen ) {
+        } else if ( id == R.id.menu_act_main_debug_screen ) {
             Intent intent = new Intent(this, actMainDebug.class);
             startActivity(intent);
         } else if ( id == R.id.menu_act_user_options ) {
@@ -183,7 +180,7 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
      * @param view
      *
      */
-    public void backtohome_action_buttonView view) {
+    public void backtohome_action_button(View view) {
 
         Toast.makeText(getBaseContext(), "Volver a Casa" , Toast.LENGTH_LONG).show();
         //TODO implementar este método y la clase (actBackToHome)
@@ -254,7 +251,7 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
      * Envio de los SMS a los familiares
      * @param view
      */
-    public void sendAvisoOffline(View view) {
+    public void sendAvisoSms(View view) {
 
         //1. Leemos la lista de personas de contacto
         //2. Comprobamos el tiempo transcurrido desde el último SMS enviado
@@ -327,7 +324,7 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
 
             tvUltimoSMSEnviado.setText("Último SMS enviado el " + currentDateandTime);
 
-            AppLog.i("sendAvisoOffline", "SMS enviado: " + tvUltimoSMSEnviado.getText());
+            AppLog.i("sendAvisoSms", "SMS enviado: " + tvUltimoSMSEnviado.getText());
 
             //TODO: almacenar en sharedpreferences la fecha del último SMS que se envió
 
@@ -428,7 +425,7 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
 
             tvUltimoSMSEnviado.setText("Último SMS enviado el " + currentDateandTime);
 
-            AppLog.i("sendAvisoOffline", "SMS enviado: " + tvUltimoSMSEnviado.getText());
+            AppLog.i("sendAvisoSms", "SMS enviado: " + tvUltimoSMSEnviado.getText());
 
             //TODO: almacenar en sharedpreferences la fecha del último SMS que se envió
 
