@@ -183,7 +183,7 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
      * @param view
      *
      */
-    public void backtohome_action_button(View view) {
+    public void backtohome_action_buttonView view) {
 
         Toast.makeText(getBaseContext(), "Volver a Casa" , Toast.LENGTH_LONG).show();
         //TODO implementar este método y la clase (actBackToHome)

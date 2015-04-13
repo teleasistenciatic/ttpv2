@@ -1,4 +1,4 @@
-package com.local.android.teleasistenciaticplus.lib.networking;
+package com.local.android.teleasistenciaticplus.lib.sms;
 
 import android.telephony.SmsManager;
 
@@ -31,6 +31,7 @@ public class SmsDispatcher {
         try {
             sms.sendTextMessage(phoneNumber, null, message, null, null);
         } catch (Exception e) {
+            //Excepcion conocida actual: SMS send error Invalid message body
             AppLog.e("SmsDispatcher", "SMS send error", e);
         }
         AppLog.i("SMSSend", phoneNumber + " " + message);

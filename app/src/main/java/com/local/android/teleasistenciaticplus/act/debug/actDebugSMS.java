@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.local.android.teleasistenciaticplus.R;
 import com.local.android.teleasistenciaticplus.lib.helper.AppLog;
-import com.local.android.teleasistenciaticplus.lib.networking.SmsDispatcher;
+import com.local.android.teleasistenciaticplus.lib.sms.SmsDispatcher;
 import com.local.android.teleasistenciaticplus.lib.phone.PhoneContacts;
 
 import java.util.Map;

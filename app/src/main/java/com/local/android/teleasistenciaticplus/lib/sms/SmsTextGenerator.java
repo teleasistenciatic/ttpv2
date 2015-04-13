@@ -1,19 +1,19 @@
-package com.local.android.teleasistenciaticplus.lib.helper;
+package com.local.android.teleasistenciaticplus.lib.sms;
 
-import com.local.android.teleasistenciaticplus.lib.networking.SmsDispatcher;
-import com.local.android.teleasistenciaticplus.lib.phone.PhoneData;
+import com.local.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
+import com.local.android.teleasistenciaticplus.lib.helper.AppTime;
 
 /**
  * Created by FESEJU on 25/03/2015.
  * Clase helper encargada de generar el texto de los mensajes SMS que luego enviará SmsDispatcher
  */
-public class AppSMS {
+public class SmsTextGenerator {
 
     String nombre;
     String apellidos;
     String currentDateandTime = new AppTime().getTimeDate();
 
-    public AppSMS() {
+    public SmsTextGenerator() {
 
         String[] nombreApellidos = new AppSharedPreferences().getUserData();
         this.nombre = nombreApellidos[0];
