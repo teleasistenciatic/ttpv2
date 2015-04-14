@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.local.android.teleasistenciaticplus.R;
+import com.local.android.teleasistenciaticplus.act.debug.actMainDebug;
 import com.local.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.local.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
 import com.local.android.teleasistenciaticplus.lib.phone.PhoneContacts;
@@ -111,10 +112,45 @@ public class actUserOptionsPersonaContacto extends Activity {
     }
 
     /**
-     * Lanza la actividad para almacenar el contacto seleccionado
+     * Listener de la pulsación de botones para el borrado de contactos
      * @param view
      */
+    public void user_options_persona_contacto_button_erase(View view) {
 
+        int id = view.getId();
+        int contacto_a_borrar = 0;
+        TextView textedit = null;
+        TextView texteditName = null;
+
+        // Hay un sólo método que recibe todas las pulsaciones de botón
+        // en base a eso se selecciona el contacto a borrar y se obtiene las cajas de texto
+        // que contienen los valores
+
+        if (id == R.id.button_user_options_persona_contacto_1_borrar) {
+            textedit = (TextView) findViewById(R.id.user_options_persona_contacto_text);
+            texteditName = (TextView) findViewById(R.id.user_options_persona_contacto_name_text);
+            contacto_a_borrar = 0;
+        } else if (id == R.id.button_user_options_persona_contacto_2_borrar) {
+            textedit = (TextView) findViewById(R.id.user_options_persona_contacto_text_1);
+            texteditName = (TextView) findViewById(R.id.user_options_persona_contacto_name_text_1);
+            contacto_a_borrar = 1;
+        } else if (id == R.id.button_user_options_persona_contacto_3_borrar) {
+            textedit = (TextView) findViewById(R.id.user_options_persona_contacto_text_2);
+            texteditName = (TextView) findViewById(R.id.user_options_persona_contacto_name_text_2);
+            contacto_a_borrar = 2;
+        }
+
+        // Borrado del contacto seleccionado
+        // 1. borrado del sharedpreferences
+        new AppSharedPreferences().deletePersonasContactobyId( contacto_a_borrar );
+
+        // 2. borrado de la interfaz
+        textedit.setText("");
+        texteditName.setText("");
+
+        AppLog.i("Contacto borrado de la lista", ""+ textedit.getText() + " : " + texteditName.getText() + " " + contacto_a_borrar );
+
+    }
 
     /**
      * Función que recoge los datos del contacto seleccionado

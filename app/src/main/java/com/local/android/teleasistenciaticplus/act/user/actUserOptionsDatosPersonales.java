@@ -1,7 +1,6 @@
 package com.local.android.teleasistenciaticplus.act.user;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 import com.local.android.teleasistenciaticplus.R;
 import com.local.android.teleasistenciaticplus.lib.helper.AlertDialogShow;
 import com.local.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
-import com.local.android.teleasistenciaticplus.modelo.GlobalData;
 
 public class actUserOptionsDatosPersonales extends Activity {
 
@@ -32,6 +30,7 @@ public class actUserOptionsDatosPersonales extends Activity {
 
     /**
      * Se guardan los datos del usuario en las SharedPreferences
+     *
      * @param view vista
      */
     public void user_options_datos_personales_edit(View view) {
@@ -40,7 +39,7 @@ public class actUserOptionsDatosPersonales extends Activity {
         TextView textEditApellidos = (TextView) findViewById(R.id.user_options_datos_personales_apellidos_text);
 
         AppSharedPreferences userSharedPreferences = new AppSharedPreferences();
-        userSharedPreferences.setUserData( textEditNombre.getText().toString() , textEditApellidos.getText().toString() );
+        userSharedPreferences.setUserData(textEditNombre.getText().toString(), textEditApellidos.getText().toString());
 
         /////////
         //Feedback al usuario tras la actualización
