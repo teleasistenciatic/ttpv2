@@ -61,7 +61,7 @@ public class FileOperation implements Constants {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
             String currentDateandTime = sdf.format(new Date());
 
-            String text = currentDateandTime + tag + "--> " + msg;
+            String text = currentDateandTime + ":" + tag + "--> " + msg;
 
             File sdcard = Environment.getExternalStorageDirectory();
             File logFile = new File(sdcard,DEBUG_LOG_FILE);
