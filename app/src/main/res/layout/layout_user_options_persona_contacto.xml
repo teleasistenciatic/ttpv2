@@ -10,104 +10,100 @@
     tools:context="com.local.android.teleasistenciaticplus.act.user.actUserOptionsPersonaContacto">
 
 
-
-
     <TextView
         android:id="@+id/user_options_persona_contacto_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/user_options_persona_contacto_label">
-    </TextView>
+        android:text="@string/user_options_persona_contacto_label"></TextView>
 
     <!-- Linea -->
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
+        android:background="@android:color/darker_gray" />
 
     <!-- Primera persona -->
+
+
     <TextView
         android:id="@+id/user_options_persona_contacto_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
         android:layout_marginTop="30dp"
-        android:text="">
-    </TextView>
+        android:text=""
+        android:textSize="10sp"></TextView>
 
     <EditText
         android:id="@+id/user_options_persona_contacto_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Persona de contacto"
-        android:textSize="20sp"
         android:editable="false"
         android:focusable="false"
+        android:onClick="user_options_persona_contacto_text_click_1"
+        android:text="Persona de contacto"
 
-        android:onClick="user_options_persona_contacto_text_click_1">
-    </EditText>
+        android:textSize="20sp"></EditText>
 
     <ImageButton
         android:id="@+id/button_user_options_persona_contacto_1_borrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:background="@android:drawable/ic_menu_close_clear_cancel"
-        android:onClick="user_options_persona_contacto_button_erase"/>
+        android:onClick="user_options_persona_contacto_button_erase" />
+
 
     <!-- Segunda persona de contacto -->
     <TextView
         android:id="@+id/user_options_persona_contacto_name_text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:text="">
-    </TextView>
+        android:text=""
+        android:textSize="10sp"></TextView>
 
     <EditText
         android:id="@+id/user_options_persona_contacto_text_1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Persona de contacto"
         android:editable="false"
         android:focusable="false"
-        android:textSize="20sp"
-        android:onClick="user_options_persona_contacto_text_click_2">
-    </EditText>
+        android:onClick="user_options_persona_contacto_text_click_2"
+        android:text="Persona de contacto"
+        android:textSize="20sp"></EditText>
 
     <ImageButton
         android:id="@+id/button_user_options_persona_contacto_2_borrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:background="@android:drawable/ic_menu_close_clear_cancel"
-        android:onClick="user_options_persona_contacto_button_erase"/>
+        android:onClick="user_options_persona_contacto_button_erase" />
 
     <!-- Tercera persona de contacto -->
     <TextView
         android:id="@+id/user_options_persona_contacto_name_text_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:text="">
-    </TextView>
+        android:text=""
+        android:textSize="10sp"></TextView>
 
     <EditText
         android:id="@+id/user_options_persona_contacto_text_2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Persona de contacto"
         android:editable="false"
         android:focusable="false"
-        android:textSize="20sp"
-        android:onClick="user_options_persona_contacto_text_click_3">
-    </EditText>
+        android:onClick="user_options_persona_contacto_text_click_3"
+        android:text="Persona de contacto"
+        android:textSize="20sp"></EditText>
 
     <ImageButton
         android:id="@+id/button_user_options_persona_contacto_3_borrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:background="@android:drawable/ic_menu_close_clear_cancel"
-        android:onClick="user_options_persona_contacto_button_erase"/>
+        android:onClick="user_options_persona_contacto_button_erase" />
 
     <!--
     <Button
