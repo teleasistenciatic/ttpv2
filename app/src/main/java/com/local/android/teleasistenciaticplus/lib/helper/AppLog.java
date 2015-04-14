@@ -40,6 +40,8 @@ import com.local.android.teleasistenciaticplus.modelo.DebugLevel;
 public class AppLog {
 
     final static String TAG = "TIC";
+    final static String fichero = Constants.DEBUG_LOG_FILE;
+
     /**
      * Log a DEBUG
      * @param tag clase donde se genera el log
@@ -54,7 +56,7 @@ public class AppLog {
         Log.d(tag + " --> ", msg);
 
         if (Constants.LOG_TO_FILE) {
-            FileOperation.fileLogWrite(tag, msg);
+            FileOperation.fileLogWrite(fichero, tag, msg);
         }
     }
 
@@ -80,7 +82,7 @@ public class AppLog {
         Log.e( tag + " --> ", msg);
 
         if (Constants.LOG_TO_FILE) {
-            FileOperation.fileLogWrite(tag, msg);
+            FileOperation.fileLogWrite(fichero, tag, msg);
         }
     }
 
@@ -101,7 +103,7 @@ public class AppLog {
 
 
         if (Constants.LOG_TO_FILE ) {
-            FileOperation.fileLogWrite(tag, msg);
+            FileOperation.fileLogWrite(fichero, tag, msg);
         }
     }
 
@@ -119,7 +121,7 @@ public class AppLog {
         Log.i(tag, msg);
 
         if (Constants.LOG_TO_FILE ) {
-            FileOperation.fileLogWrite(tag, msg);
+            FileOperation.fileLogWrite(fichero, tag, msg);
         }
     }
 
@@ -138,7 +140,7 @@ public class AppLog {
         Log.v( tag + " --> ", msg);
 
         if (Constants.LOG_TO_FILE) {
-            FileOperation.fileLogWrite(tag, msg);
+            FileOperation.fileLogWrite(fichero, tag, msg);
         }
     }
 
@@ -156,7 +158,7 @@ public class AppLog {
         Log.w( tag + " --> ", msg);
 
         if (Constants.LOG_TO_FILE) {
-            FileOperation.fileLogWrite(tag, msg);
+            FileOperation.fileLogWrite(fichero, tag, msg);
         }
     }
 

@@ -1,7 +1,6 @@
 package com.local.android.teleasistenciaticplus.lib.filesystem;
 
 import android.os.Environment;
-import android.widget.TextView;
 
 import com.local.android.teleasistenciaticplus.modelo.Constants;
 
@@ -21,23 +20,23 @@ import java.util.Date;
 
 public class FileOperation implements Constants {
 
-    public static void fileLogInitialize() {
+    public static void fileLogInitialize(String fichero) {
 
         File sdcard = Environment.getExternalStorageDirectory();
-        File logFile = new File(sdcard,DEBUG_LOG_FILE);
+        File logFile = new File(sdcard,fichero);
 
         if (logFile.exists()) {
-            fileLogErase();
+            fileLogErase(fichero);
         }
     }
 
     /**
      * Borrado del fichero de log
      */
-    public static void fileLogErase() {
+    public static void fileLogErase(String fichero) {
 
         File sdcard = Environment.getExternalStorageDirectory();
-        File logFile = new File(sdcard,DEBUG_LOG_FILE);
+        File logFile = new File(sdcard,fichero);
 
         try {
             logFile.delete();
@@ -55,7 +54,7 @@ public class FileOperation implements Constants {
      * @param tag La clase o módulo donde se lanza el mensaje
      * @param msg El mensaje generado
      */
-    public static void fileLogWrite(String tag, String msg) {
+    public static void fileLogWrite(String fichero, String tag, String msg) {
         {
             //Timestamp
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
@@ -64,7 +63,7 @@ public class FileOperation implements Constants {
             String text = currentDateandTime + ":" + tag + "--> " + msg;
 
             File sdcard = Environment.getExternalStorageDirectory();
-            File logFile = new File(sdcard,DEBUG_LOG_FILE);
+            File logFile = new File(sdcard,fichero);
 
             //////////// En el caso que no quisieramos borrar el fichero ///////
             if (!logFile.exists()) {

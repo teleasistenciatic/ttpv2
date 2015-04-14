@@ -33,7 +33,7 @@ public class Hook extends Application {
         GlobalData.setPhoneNumber( new PhoneData().getPhoneImei() );
 
         //Si existe el fichero de LOG se inicializa
-        FileOperation.fileLogInitialize();
+        FileOperation.fileLogInitialize(Constants.DEBUG_LOG_FILE);
 
         AppLog.i("Hook.class", "Ejecutado Hook de aplicación");
     }

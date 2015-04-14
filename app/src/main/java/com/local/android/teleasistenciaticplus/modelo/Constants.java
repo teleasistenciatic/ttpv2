@@ -15,6 +15,7 @@ public interface Constants {
 
         public static final Boolean LOG_TO_FILE = true;
         public static final String DEBUG_LOG_FILE = "teleasistencia.log";
+        public static final String RED_NEURONAL_FILE = "teleasistencia_red_neuronal.log";
 
     ////////////////////////////////////////////////
     // MISCELANEA
