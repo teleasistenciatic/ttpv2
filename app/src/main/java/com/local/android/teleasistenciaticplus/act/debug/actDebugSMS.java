@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.local.android.teleasistenciaticplus.R;
 import com.local.android.teleasistenciaticplus.lib.helper.AppLog;
+import com.local.android.teleasistenciaticplus.lib.sms.SmsCheck;
 import com.local.android.teleasistenciaticplus.lib.sms.SmsDispatcher;
 import com.local.android.teleasistenciaticplus.lib.phone.PhoneContacts;
 
@@ -34,23 +36,26 @@ public class actDebugSMS extends Activity {
      */
     public void sms_send(View view) {
 
+        //Obtener los datos para enviar el SMS
         TextView phoneNumberEdit = (TextView) findViewById(R.id.debug_edit_sms_number);
         String phoneNumber = phoneNumberEdit.getText().toString();
 
         TextView smsMessageEdit = (TextView) findViewById(R.id.debug_edit_sms_message);
         String smsBodyText = smsMessageEdit.getText().toString();
 
-        //Versión antigua básica y sin acuse de recibo
+        // Se envía el SMS
         SmsDispatcher miSmsDispatcher = new SmsDispatcher(phoneNumber,smsBodyText);
-
         miSmsDispatcher.send();
 
-        AppLog.i("actDebugSMS", "SMS:Enviado: " + miSmsDispatcher.isSmsEnviado()
-                        + " SMS:Confirmado: " + miSmsDispatcher.isSmsConfirmado()
-                        + " SMS:Numero: " + phoneNumber
-                        + " SMS:BodyText: " + smsBodyText
-                        + " SMS:CodigoConfirmado: " + miSmsDispatcher.getCodigoEnviado()
-        );
+        Toast.makeText(getApplicationContext(), "Codigo confirmado:" + SmsCheck.codigoConfirmado,
+                Toast.LENGTH_SHORT).show();
+
+        AppLog.d("actDebugSMS", "Datos envío: " + SmsCheck.smsHayDatosEnvioSms + "Codigo enviado: " + SmsCheck.codigoEnviado) ;
+
+        AppLog.d("actDebugSMS", " SMS:Numero: " + phoneNumber
+                              + " SMS:BodyText: " + smsBodyText );
+
+        miSmsDispatcher = null;
 
     }
 
