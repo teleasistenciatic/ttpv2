@@ -7,7 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.telephony.SmsManager;
+import android.widget.Toast;
 
+import com.local.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.local.android.teleasistenciaticplus.modelo.GlobalData;
 
 /**
@@ -29,6 +31,17 @@ public class SmsDispatcher {
     private boolean smsConfirmado = false; //Flag de recepción
 
     private String codigoConfirmado = null; //Cadena con el codigo de exito/error al confirmar un SMS
+
+    private boolean informacionSmsEnviado = false;
+    private boolean informacionSmsConfirmado = false;
+
+    public boolean isInformacionSmsEnviado() {
+        return informacionSmsEnviado;
+    }
+
+    public boolean isInformacionSmsConfirmado() {
+        return informacionSmsConfirmado;
+    }
 
     public boolean isSmsConfirmado() {
         return smsConfirmado;
@@ -84,8 +97,13 @@ public class SmsDispatcher {
         miContexto.registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
+                informacionSmsEnviado = true;
+                AppLog.i("SMS","ENVIADO");
                 switch (getResultCode()) {
                     case Activity.RESULT_OK:
+                        Toast.makeText(miContexto, "Valor:" + informacionSmsEnviado,
+                                Toast.LENGTH_SHORT).show();
+                        AppLog.i("SMS","ENVIADO");
                             smsEnviado = true;
                             setCodigoEnviado("Activity.RESULT_OK");
                         break;
@@ -116,6 +134,7 @@ public class SmsDispatcher {
         miContexto.registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
+                informacionSmsConfirmado = true;
                 switch (getResultCode()) {
                     case Activity.RESULT_OK:
                         smsConfirmado = true;
@@ -134,6 +153,11 @@ public class SmsDispatcher {
         SmsManager sms =  SmsManager.getDefault();
         sms.sendTextMessage(phoneNumber,null,message,sentPI,deliveredPI);
         ///////////////////////////////////////////////////////////////////
+
+        /*
+        while ( isInformacionSmsEnviado() == false ){
+            AppLog.i("SMS","Enviado sms...");
+        }*/
     }
 
 }

@@ -45,12 +45,12 @@ public class actDebugSMS extends Activity {
 
         miSmsDispatcher.send();
 
-        AppLog.i( "actDebugSMS", "SMS:Enviado: " + miSmsDispatcher.isSmsEnviado()
-                               + " SMS:Confirmado: " + miSmsDispatcher.isSmsConfirmado()
-                               + " SMS:Numero: " + phoneNumber
-                               + " SMS:BodyText: " + smsBodyText
-                               + " SMS:CodigoConfirmado: " + miSmsDispatcher.getCodigoEnviado()
-                );
+        AppLog.i("actDebugSMS", "SMS:Enviado: " + miSmsDispatcher.isSmsEnviado()
+                        + " SMS:Confirmado: " + miSmsDispatcher.isSmsConfirmado()
+                        + " SMS:Numero: " + phoneNumber
+                        + " SMS:BodyText: " + smsBodyText
+                        + " SMS:CodigoConfirmado: " + miSmsDispatcher.getCodigoEnviado()
+        );
 
     }
 
