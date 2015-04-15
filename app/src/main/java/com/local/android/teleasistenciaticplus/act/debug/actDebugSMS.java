@@ -40,7 +40,18 @@ public class actDebugSMS extends Activity {
         TextView smsMessageEdit = (TextView) findViewById(R.id.debug_edit_sms_message);
         String smsBodyText = smsMessageEdit.getText().toString();
 
-        new SmsDispatcher(phoneNumber, smsBodyText).send();
+        //Versión antigua básica y sin acuse de recibo
+        SmsDispatcher miSmsDispatcher = new SmsDispatcher(phoneNumber,smsBodyText);
+
+        miSmsDispatcher.send();
+
+        AppLog.i( "actDebugSMS", "SMS:Enviado: " + miSmsDispatcher.isSmsEnviado()
+                               + " SMS:Confirmado: " + miSmsDispatcher.isSmsConfirmado()
+                               + " SMS:Numero: " + phoneNumber
+                               + " SMS:BodyText: " + smsBodyText
+                               + " SMS:CodigoConfirmado: " + miSmsDispatcher.getCodigoEnviado()
+                );
+
     }
 
     /**
