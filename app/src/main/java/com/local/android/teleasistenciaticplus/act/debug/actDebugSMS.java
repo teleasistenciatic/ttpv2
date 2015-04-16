@@ -2,9 +2,12 @@ package com.local.android.teleasistenciaticplus.act.debug;
 
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +17,7 @@ import com.local.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.local.android.teleasistenciaticplus.lib.sms.SmsCheck;
 import com.local.android.teleasistenciaticplus.lib.sms.SmsDispatcher;
 import com.local.android.teleasistenciaticplus.lib.phone.PhoneContacts;
+import com.local.android.teleasistenciaticplus.modelo.GlobalData;
 
 import java.util.Map;
 
@@ -45,19 +49,31 @@ public class actDebugSMS extends Activity {
 
         // Se envía el SMS
         SmsDispatcher miSmsDispatcher = new SmsDispatcher(phoneNumber,smsBodyText);
+
         miSmsDispatcher.send();
+    }
 
-        Toast.makeText(getApplicationContext(), "Codigo confirmado:" + SmsCheck.codigoConfirmado,
-                Toast.LENGTH_SHORT).show();
+    public static void sms_post_send(boolean exito, String info) {
+        Context miContexto = new GlobalData().getAppContext();
+        Toast.makeText(miContexto, "El valor del envio es:" + exito + " " + info, Toast.LENGTH_SHORT)
+                .show();
+    }
 
-        AppLog.d("actDebugSMS", "Datos envío: " + SmsCheck.smsHayDatosEnvioSms + "Codigo enviado: " + SmsCheck.codigoEnviado) ;
+    /**
+     * Debug SMS send
+     *
+     */
+    public void sms_post_send() {
+
+       /* AppLog.d("actDebugSMS", "Datos envío: " + SmsCheck.smsHayDatosEnvioSms + "Codigo enviado: " + SmsCheck.codigoEnviado) ;
 
         AppLog.d("actDebugSMS", " SMS:Numero: " + phoneNumber
-                              + " SMS:BodyText: " + smsBodyText );
+                + " SMS:BodyText: " + smsBodyText );
 
-        miSmsDispatcher = null;
+        miSmsDispatcher = null;  */
 
     }
+
 
     /**
      * Lanza la actividad para almacenar el contacto seleccionado

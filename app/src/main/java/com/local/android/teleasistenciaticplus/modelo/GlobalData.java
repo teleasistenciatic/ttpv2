@@ -1,5 +1,6 @@
 package com.local.android.teleasistenciaticplus.modelo;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
