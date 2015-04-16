@@ -1,6 +1,5 @@
 package com.local.android.teleasistenciaticplus.modelo;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
@@ -16,7 +15,7 @@ import android.content.Context;
 public class GlobalData extends Application {
 
     private static Context context; //Contexto de la aplicación
-    private static String phoneNumber; //Número de teléfono del terminal
+    private static String imei; //Número IMEI del terminal
 
     /**
      * Se guarda el contexto de la aplicación
@@ -28,10 +27,10 @@ public class GlobalData extends Application {
 
     /**
      * Se guarda el numero de teléfono
-     * @param phoneNumber número de teléfono
+     * @param imei número de teléfono
      */
-    public static void setPhoneNumber( String phoneNumber ) {
-        GlobalData.phoneNumber = phoneNumber;
+    public static void setImei(String imei) {
+        GlobalData.imei = imei;
     }
 
     /**
@@ -46,6 +45,6 @@ public class GlobalData extends Application {
      * Getter del numero de teléfono de la aplicación
      * @return numero de teléfono
      */
-    public static String getPhoneNumber() { return GlobalData.phoneNumber;}
+    public static String getImei() { return GlobalData.imei;}
 
 }

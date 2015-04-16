@@ -23,6 +23,7 @@ import com.local.android.teleasistenciaticplus.lib.helper.AlertDialogShow;
 import com.local.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.local.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
 import com.local.android.teleasistenciaticplus.lib.playsound.PlaySound;
+import com.local.android.teleasistenciaticplus.lib.sms.SmsTextGenerator;
 import com.local.android.teleasistenciaticplus.modelo.Constants;
 import com.local.android.teleasistenciaticplus.modelo.DebugLevel;
 
@@ -258,7 +259,6 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
         //2. Se les envía SMS
         //3. Se muestra un mensaje de indicación
 
-
         Boolean hayPersonasContactoConTelefono = new AppSharedPreferences().hasPersonasContacto();
 
         if ( !hayPersonasContactoConTelefono ) {
@@ -295,17 +295,17 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
 
         if ( personasContacto[1].length() > 0) {
 
-            //new AppSMS().generateSmsAviso( personasContacto[1] );
+            new SmsTextGenerator().generateSmsAviso(personasContacto[1]);
         }
 
         if ( personasContacto[3].length() > 0) {
 
-            //new AppSMS().generateSmsAviso( personasContacto[3] );
+            new SmsTextGenerator().generateSmsAviso( personasContacto[3] );
         }
 
         if ( personasContacto[5].length() > 0) {
 
-            //new AppSMS().generateSmsAviso( personasContacto[5] );
+            new SmsTextGenerator().generateSmsAviso( personasContacto[5] );
         }
 
         //TODO: mejorar con el control de errores de SMS
@@ -393,19 +393,19 @@ public class actMain extends Activity implements fragUserRegister.OnFragmentInte
 
         if ( personasContacto[1].length() > 0) {
 
-            //new AppSMS().generateSmsIamOK( personasContacto[1] );
+            new SmsTextGenerator().generateSmsIamOK( personasContacto[1] );
 
         }
 
         if ( personasContacto[3].length() > 0) {
 
-            //new AppSMS().generateSmsIamOK( personasContacto[3] );
+            new SmsTextGenerator().generateSmsIamOK( personasContacto[3] );
 
         }
 
         if ( personasContacto[5].length() > 0) {
 
-            //new AppSMS().generateSmsIamOK( personasContacto[5] );
+            new SmsTextGenerator().generateSmsIamOK( personasContacto[5] );
 
         }
 
